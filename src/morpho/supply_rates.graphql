@@ -1,0 +1,14 @@
+query MorphoSupplyRates($first: Int, $side: InterestRateSide!) {
+  interestRates(first: $first, where: { side: $side }) {
+    id
+    rate
+    side
+    market {
+      id
+      name
+      inputToken {
+        symbol
+      }
+    }
+  }
+}

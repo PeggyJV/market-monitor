@@ -1,0 +1,27 @@
+query MorphoMarkets($first: Int, $orderBy: Market_orderBy!, $orderDirection: OrderDirection!) {
+  markets(first: $first, orderBy: $orderBy, orderDirection: $orderDirection) {
+    id
+    name
+    inputToken {
+      name
+      symbol
+      decimals
+    }
+    borrowedToken {
+      name
+      symbol
+      decimals
+    }
+    totalValueLockedUSD
+    totalDepositBalanceUSD
+    totalBorrowBalanceUSD
+    borrowingPositionCount
+    lendingPositionCount
+    openPositionCount
+    maximumLTV
+    liquidationThreshold
+    liquidationPenalty
+    isActive
+    createdTimestamp
+  }
+}
