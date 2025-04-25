@@ -1,0 +1,14 @@
+query EulerWithdraws($first: Int, $orderBy: Withdraw_orderBy!, $orderDirection: OrderDirection!) {
+  withdraws(first: $first, orderBy: $orderBy, orderDirection: $orderDirection) {
+    id
+    sender
+    receiver
+    owner
+    assets
+    shares
+    vault
+    blockNumber
+    blockTimestamp
+    transactionHash
+  }
+}

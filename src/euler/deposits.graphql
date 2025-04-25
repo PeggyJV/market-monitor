@@ -1,0 +1,13 @@
+query EulerDeposits($first: Int, $orderBy: Deposit_orderBy!, $orderDirection: OrderDirection!) {
+  deposits(first: $first, orderBy: $orderBy, orderDirection: $orderDirection) {
+    id
+    sender
+    owner
+    assets
+    shares
+    vault
+    blockNumber
+    blockTimestamp
+    transactionHash
+  }
+}

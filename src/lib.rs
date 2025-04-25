@@ -5,6 +5,7 @@
 
 mod client;
 mod config;
+pub mod euler;
 pub mod morpho;
 
 use anyhow::Result;
@@ -22,6 +23,15 @@ pub fn init() {
 /// Creates a new client for querying the Morpho Base subgraph
 pub fn morpho_base_client() -> Result<GraphClient> {
     let subgraph_id = config::morpho_base_subgraph_id();
+    let url = Url::parse(&config::subgraph_url(subgraph_id))
+        .map_err(|e| anyhow::anyhow!("Invalid subgraph URL: {}", e))?;
+
+    GraphClient::new(url)
+}
+
+/// Creates a new client for querying the Euler protocol subgraph
+pub fn euler_client() -> Result<GraphClient> {
+    let subgraph_id = config::euler_subgraph_id();
     let url = Url::parse(&config::subgraph_url(subgraph_id))
         .map_err(|e| anyhow::anyhow!("Invalid subgraph URL: {}", e))?;
 

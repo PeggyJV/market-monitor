@@ -1,0 +1,12 @@
+query EulerVaults($first: Int, $orderBy: VaultStatus_orderBy!, $orderDirection: OrderDirection!) {
+  vaultStatuses(first: $first, orderBy: $orderBy, orderDirection: $orderDirection) {
+    id
+    totalShares
+    totalBorrows
+    accumulatedFees
+    cash
+    interestAccumulator
+    interestRate
+    timestamp
+  }
+}

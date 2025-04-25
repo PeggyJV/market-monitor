@@ -36,3 +36,11 @@ pub fn morpho_base_subgraph_id() -> &'static str {
     debug!("Using Morpho Base subgraph ID: {}", id);
     id
 }
+
+/// Returns the Euler protocol subgraph ID
+pub fn euler_subgraph_id() -> &'static str {
+    // Using Euler's subgraph ID - replace with the actual ID when available
+    let id = "B48TmxW7Bu56sV2C4YL6TTdTxG9MQYPkU6tXqr18Nv4h";
+    debug!("Using Euler subgraph ID: {}", id);
+    id
+}
